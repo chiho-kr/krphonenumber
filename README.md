@@ -48,13 +48,13 @@
 `python main.py --input your_input.csv --column PhoneNumber`
 
 - CSV 파일 처리 (국가번호 포함, 선행 0 보존):
-`python main.py --input your_input.csv --header False --country True --strip-zero False`
+`python main.py --input your_input.csv --column PhoneNumber --country True --strip-zero False`
 
 - CSV 파일 처리 (국가번호 포함, 선행 0 제거):
-`python main.py --input your_input.csv --header False --country True --strip-zero True`
+`python main.py --input your_input.csv --column PhoneNumber --country True --strip-zero True`
 
 - GeoJSON 파일 처리:
-`python main.py --input your_input.geojson --property (phone)`
+`python main.py --input your_input.geojson --property PhoneNumber`
 
 ## 기능 설명
 ### 1. 전화번호 정규화 및 포매팅
@@ -153,13 +153,13 @@ This project is a tool for normalizing and formatting various phone number repre
 `python main.py --input your_input.csv --column PhoneNumber`
 
 - Processing a CSV file (including country code, preserving leading zero):
-`python main.py --input your_input.csv --header False --country True --strip-zero False`
+`python main.py --input your_input.csv --column PhoneNumber --country True --strip-zero False`
 
 - Processing a CSV file (including country code, removing leading zero):
-`python main.py --input your_input.csv --header False --country True --strip-zero True`
+`python main.py --input your_input.csv --column PhoneNumber --country True --strip-zero True`
 
 - Processing a GeoJSON file:
-`python main.py --input your_input.geojson --property (phone)`
+`python main.py --input your_input.geojson --property PhoneNumber`
 
 ## Feature Description
 ### 1. Phone Number Normalization and Formatting

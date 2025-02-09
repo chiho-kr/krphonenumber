@@ -69,25 +69,25 @@
   정규화된 번호를 사용자 옵션에 따라 원하는 포맷(예: “010-1234-5678” 또는 “+82 010-1234-5678”)으로 변환합니다.
   `--country`, `--strip-zero` 옵션에 따라 다르게 출력됩니다.
   - **ITU-T E.123 / DIN 5008**: 국가 코드, 지역 번호, 로컬 번호를 공백으로 구분하는 패턴입니다.
-    - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
+    - `python main.py --input input.csv --country True --delimiter space --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
       - 예: `+82 010 1234 5678`
-    - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero True`: 지역번호의 선행 0이 제거됩니다.
+    - `python main.py --input input.csv --country True --delimiter space --strip-zero True`: 지역번호의 선행 0이 제거됩니다.
       - 예: `+82 10 1234 5678`
 
   - **RFC 3966 / NANP**: 국가 코드, 지역 번호, 로컬 번호를 하이픈으로 구분하는 패턴입니다.
-    - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
+    - `python main.py --input input.csv --country True --delimiter hyphen --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
       - 예: `+82 010-1234-5678`
-    - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero True`: 지역번호의 선행 0이 제거됩니다.
+    - `python main.py --input input.csv --country True --delimiter hyphen --strip-zero True`: 지역번호의 선행 0이 제거됩니다.
       - 예: `+82 10-1234-5678`
   
   - **국내 전화망 번호**: 국가 코드 없이 지역 번호, 로컬 번호를 하이픈 또는 공백으로 구분하는 패턴입니다. `--country` 매개변수를 명시하지 않습니다.
-    - `python main.py --input input.csv --header False --delimiter space --strip-zero False`: 번호를 공백으로 구분하며, 지역번호의 선행 0이 보존됩니다.
+    - `python main.py --input input.csv --delimiter space --strip-zero False`: 번호를 공백으로 구분하며, 지역번호의 선행 0이 보존됩니다.
       - 예: `010 1234 5678`
-    - `python main.py --input input.csv --header False --delimiter space --strip-zero True`: 번호를 공백으로 구분하며, 지역번호의 선행 0이 제거됩니다.
+    - `python main.py --input input.csv --delimiter space --strip-zero True`: 번호를 공백으로 구분하며, 지역번호의 선행 0이 제거됩니다.
       - 예: `10 1234 5678`
-    - `python main.py --input input.csv --header False --delimiter hyphen --strip-zero False`: 번호를 하이픈으로 구분하며, 지역번호의 선행 0이 보존됩니다.
+    - `python main.py --input input.csv --delimiter hyphen --strip-zero False`: 번호를 하이픈으로 구분하며, 지역번호의 선행 0이 보존됩니다.
       - 예: `010-1234-5678`
-    - `python main.py --input input.csv --header False --delimiter hyphen --strip-zero True`: 번호를 하이픈으로 구분하며, 지역번호의 선행 0이 제거됩니다.
+    - `python main.py --input input.csv --delimiter hyphen --strip-zero True`: 번호를 하이픈으로 구분하며, 지역번호의 선행 0이 제거됩니다.
       - 예: `10-1234-5678`
 
 ### 2. 파일 처리 기능 (CSV 및 GeoJSON)
@@ -191,25 +191,25 @@ This project is a tool for normalizing and formatting various phone number repre
   Transforms the normalized number into the desired format based on user options (e.g., "010-1234-5678" or "+82 010-1234-5678").  
   The output varies according to the `--country` and `--strip-zero` options.
   - **ITU-T E.123 / DIN 5008**: A pattern that separates the country code, area code, and local number with spaces.
-    - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero False`: The leading zero in the area code is preserved.
+    - `python main.py --input input.csv --country True --delimiter space --strip-zero False`: The leading zero in the area code is preserved.
       - Example: `+82 010 1234 5678`
-    - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero True`: The leading zero in the area code is removed.
+    - `python main.py --input input.csv --country True --delimiter space --strip-zero True`: The leading zero in the area code is removed.
       - Example: `+82 10 1234 5678`
   
   - **RFC 3966 / NANP**: A pattern that separates the country code, area code, and local number with hyphens.
-    - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero False`: The leading zero in the area code is preserved.
+    - `python main.py --input input.csv --country True --delimiter hyphen --strip-zero False`: The leading zero in the area code is preserved.
       - Example: `+82 010-1234-5678`
-    - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero True`: The leading zero in the area code is removed.
+    - `python main.py --input input.csv --country True --delimiter hyphen --strip-zero True`: The leading zero in the area code is removed.
       - Example: `+82 10-1234-5678`
   
   - **Domestic Phone Network Numbers**: A pattern that separates the area code and local number with either hyphens or spaces without including the country code. The `--country` parameter is not specified.
-    - `python main.py --input input.csv --header False --delimiter space --strip-zero False`: Numbers are separated by spaces, and the leading zero in the area code is preserved.
+    - `python main.py --input input.csv --delimiter space --strip-zero False`: Numbers are separated by spaces, and the leading zero in the area code is preserved.
       - Example: `010 1234 5678`
-    - `python main.py --input input.csv --header False --delimiter space --strip-zero True`: Numbers are separated by spaces, and the leading zero in the area code is removed.
+    - `python main.py --input input.csv --delimiter space --strip-zero True`: Numbers are separated by spaces, and the leading zero in the area code is removed.
       - Example: `10 1234 5678`
-    - `python main.py --input input.csv --header False --delimiter hyphen --strip-zero False`: Numbers are separated by hyphens, and the leading zero in the area code is preserved.
+    - `python main.py --input input.csv --delimiter hyphen --strip-zero False`: Numbers are separated by hyphens, and the leading zero in the area code is preserved.
       - Example: `010-1234-5678`
-    - `python main.py --input input.csv --header False --delimiter hyphen --strip-zero True`: Numbers are separated by hyphens, and the leading zero in the area code is removed.
+    - `python main.py --input input.csv --delimiter hyphen --strip-zero True`: Numbers are separated by hyphens, and the leading zero in the area code is removed.
       - Example: `10-1234-5678`
 
 ### 2. File Processing Functionality (CSV and GeoJSON)

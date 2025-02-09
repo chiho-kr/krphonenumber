@@ -72,6 +72,7 @@
     - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
       - 예: `+82 010 1234 5678`
     - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero True`: 지역번호의 선행 0이 제거됩니다.
+      - 예: `+82 10 1234 5678`
 
   - **RFC 3966 / NANP**: 국가 코드, 지역 번호, 로컬 번호를 하이픈으로 구분하는 패턴입니다.
     - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero False`: 지역번호의 선행 0이 보존됩니다.
@@ -193,6 +194,7 @@ This project is a tool for normalizing and formatting various phone number repre
     - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero False`: The leading zero in the area code is preserved.
       - Example: `+82 010 1234 5678`
     - `python main.py --input input.csv --header False --country True --delimiter space --strip-zero True`: The leading zero in the area code is removed.
+      - Example: `+82 10 1234 5678`
   
   - **RFC 3966 / NANP**: A pattern that separates the country code, area code, and local number with hyphens.
     - `python main.py --input input.csv --header False --country True --delimiter hyphen --strip-zero False`: The leading zero in the area code is preserved.
